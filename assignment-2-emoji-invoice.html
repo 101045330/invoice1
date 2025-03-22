@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 
     <meta charset="utf-8">
@@ -7,115 +8,115 @@
     <title>Invoice</title>
 
     <style type="text/css">
-
-    .invoice-box{
+        .invoice-box {
             background: white;
-        max-width:800px;
-        margin:auto;
-        padding:30px;
-        border:1px solid #eee;
-        box-shadow:0 0 10px rgba(0, 0, 0, .15);
-        font-size:16px;
-        line-height:24px;
-        font-family:'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
-        color:#555;
-    }
-    
-    .invoice-box table{
-        width:100%;
-        line-height:inherit;
-        text-align:left;
-    }
-    
-    .invoice-box table td{
-        padding:5px;
-        vertical-align:top;
-    }
-    
-    .invoice-box table tr td:nth-child(2){
-        text-align:right;
-    }
-    
-    .invoice-box table tr.top table td{
-        padding-bottom:20px;
-    }
-    
-    .invoice-box table tr.top table td.title{
-        font-size:45px;
-        line-height:45px;
-        color:#333;
-    }
-    
-    .invoice-box table tr.information table td{
-        padding-bottom:40px;
-    }
-    
-    .invoice-box table tr.heading td{
-        background:#eee;
-        border-bottom:1px solid #ddd;
-        font-weight:bold;
-    }
-    
-    .invoice-box table tr.details td{
-        padding-bottom:20px;
-    }
-    
-    .invoice-box table tr.item td{
-        border-bottom:1px solid #eee;
-    }
-    
-    .invoice-box table tr.item.last td{
-        border-bottom:none;
-    }
-    
-    .invoice-box table tr.total td:nth-child(2){
-        border-top:2px solid #eee;
-        font-weight:bold;
-    }
-
-    .hourly-rate-input {
-        width: 20px;
-    }
-
-    .hours-input {
-        width: 20px;
-    }
-
-    .item-input {
-        width: 200px;
-    }
-
-    .align-right {
-        text-align: right;
-    }
-    
-    @media only screen and (max-width: 600px) {
-        .invoice-box table tr.top table td{
-            width:100%;
-            display:block;
-            text-align:center;
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+            border: 1px solid #eee;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .15);
+            font-size: 16px;
+            line-height: 24px;
+            font-family: 'Helvetica Neue', 'Helvetica', Helvetica, Arial, sans-serif;
+            color: #555;
         }
-        .invoice-box table tr.information table td{
-            width:100%;
-            display:block;
-            text-align:center;
+
+        .invoice-box table {
+            width: 100%;
+            line-height: inherit;
+            text-align: left;
         }
-    }
+
+        .invoice-box table td {
+            padding: 5px;
+            vertical-align: top;
+        }
+
+        .invoice-box table tr td:nth-child(2) {
+            text-align: right;
+        }
+
+        .invoice-box table tr.top table td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.top table td.title {
+            font-size: 45px;
+            line-height: 45px;
+            color: #333;
+        }
+
+        .invoice-box table tr.information table td {
+            padding-bottom: 40px;
+        }
+
+        .invoice-box table tr.heading td {
+            background: #eee;
+            border-bottom: 1px solid #ddd;
+            font-weight: bold;
+        }
+
+        .invoice-box table tr.details td {
+            padding-bottom: 20px;
+        }
+
+        .invoice-box table tr.item td {
+            border-bottom: 1px solid #eee;
+        }
+
+        .invoice-box table tr.item.last td {
+            border-bottom: none;
+        }
+
+        .invoice-box table tr.total td:nth-child(2) {
+            border-top: 2px solid #eee;
+            font-weight: bold;
+        }
+
+        .hourly-rate-input {
+            width: 20px;
+        }
+
+        .hours-input {
+            width: 20px;
+        }
+
+        .item-input {
+            width: 200px;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .invoice-box table tr.top table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+
+            .invoice-box table tr.information table td {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+        }
     </style>
 
 
     <section id="add-item-component-1">
-        <div class="invoice-box">        
+        <div class="invoice-box">
 
-                Item: 
-                <input type="text" name="item" class="item-input" title="Enter item name" placeholder="Item">
-                Hours: 
-                <input type="text" class="hours-input" name="hours" title="Enter hours worked" placeholder="Hours">
-                Hourly Rate:  
-                <input type="text" class="hourly-rate-input" name="hourly rate" 
-                    title="Enter hourly rate" placeholder="Hourly Rate">
+            Item:
+            <input type="text" name="item" class="item-input" title="Enter item name" placeholder="Item">
+            Hours:
+            <input type="text" class="hours-input" name="hours" title="Enter hours worked" placeholder="Hours">
+            Hourly Rate:
+            <input type="text" class="hourly-rate-input" name="hourly rate" title="Enter hourly rate"
+                placeholder="Hourly Rate">
 
-                <button id="btn_add_work_hours"> Add Hours </button>
+            <button id="btn_add_work_hours"> Add Hours </button>
 
         </div><!-- .invoice-box-->
     </section>
@@ -124,123 +125,123 @@
     <div class="invoice-box">
 
         <section id="header-component-2-3">
-                <table cellpadding="0" cellspacing="0">
+            <table cellpadding="0" cellspacing="0">
 
-                    <tr class="top" id="invoice-identifier-area-2">
-                        <td colspan="4">
-                            <table>
-                                <tr>
-                                    <td class="title">
-                                        <img src="emoji.png" width="100" alt="Company Logo">
-                                    </td>
-                                    
-                                    <td>
-                                        Invoice #: 123456789 <br>
-                                        Created: January 1, 2022 <br>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
-                    
-                    <tr class="information" id="invoice-address-area-3">
-                        <td colspan="4">
-                            <table>
-                                <tr>
-                                    <td>
-                                        Emoji Web Design, Inc. 
-                                        <br>
-                                        12345 Sunny Road
-                                        <br>
-                                        Sunnyville, TX 12345
+                <tr class="top" id="invoice-identifier-area-2">
+                    <td colspan="4">
+                        <table>
+                            <tr>
+                                <td class="title">
+                                    <img src="emoji.png" width="100" alt="Company Logo">
+                                </td>
 
-                                    </td>
-                                    
-                                    <td>
-                                    </td>
-                                </tr>
-                            </table>
-                        </td>
-                    </tr>
+                                <td>
+                                    Invoice #: 123456789 <br>
+                                    Created: January 1, 2022 <br>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
 
-                </table>
+                <tr class="information" id="invoice-address-area-3">
+                    <td colspan="4">
+                        <table>
+                            <tr>
+                                <td>
+                                    Emoji Web Design, Inc.
+                                    <br>
+                                    12345 Sunny Road
+                                    <br>
+                                    Sunnyville, TX 12345
+
+                                </td>
+
+                                <td>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+
+            </table>
         </section>
 
         <section id="payment-type-component-4-5">
-                <table>
-                    <tr class="heading">
-                        <td colspan="3">
-                            Payment Method
-                        </td>
-                        
-                        <td>
-                            Payment Types Accepted
-                        </td>
-                    </tr>
-                    
-                    <tr class="details">
+            <table>
+                <tr class="heading">
+                    <td colspan="3">
+                        Payment Method
+                    </td>
 
-                        <td colspan="3" id="payment-component-type-5">
-                            Check
-                        </td>
-                        
-                        <td  id="payment-component-type-4">
-                            <select title="Payment Types Accepted" name="payment_mode">
-                                <option value="cheque" >
-                                        Check
-                                </option>
-                                <option value="cash">
-                                        Cash
-                                </option>
-                                <option value="credit_card" selected>
-                                        Credit Card
-                                </option>
-                            </select>
-                        </td>
+                    <td>
+                        Payment Types Accepted
+                    </td>
+                </tr>
 
-                    </tr>
-                </table>
+                <tr class="details">
+
+                    <td colspan="3" id="payment-component-type-5">
+                        Check
+                    </td>
+
+                    <td id="payment-component-type-4">
+                        <select title="Payment Types Accepted" name="payment_mode">
+                            <option value="cheque">
+                                Check
+                            </option>
+                            <option value="cash">
+                                Cash
+                            </option>
+                            <option value="credit_card" selected>
+                                Credit Card
+                            </option>
+                        </select>
+                    </td>
+
+                </tr>
+            </table>
         </section>
 
         <section id="item-component-6">
-                <table>
-                    <tr class="heading">
-                        <td>
-                            Items
-                        </td>
-                        
-                        <td  class="align-right">
+            <table>
+                <tr class="heading">
+                    <td>
+                        Items
+                    </td>
+
+                    <td class="align-right">
                         Hours Worked
-                        </td>
-                        <td  class="align-right">
+                    </td>
+                    <td class="align-right">
                         Hourly Rate
-                        </td>
-                        <td  class="align-right">
+                    </td>
+                    <td class="align-right">
                         Total
-                        </td>
-                    </tr>
-                    
-                    <tbody id="tableStuff">
-                    <!-- use this id to show the Array in question 4a -->   
+                    </td>
+                </tr>
+
+                <tbody id="tableStuff">
+                    <!-- use this id to show the Array in question 4a -->
                     <tr class="item">
                         <td>Web Design</td>
-                        <td  class="align-right">20</td>
-                        <td  class="align-right">$50.00</td>
+                        <td class="align-right">20</td>
+                        <td class="align-right">$50.00</td>
                         <td class="align-right">$1,000.00</td>
                     </tr>
 
                     <tr class="item">
                         <td>Web Development</td>
-                        <td  class="align-right">100</td>
-                        <td  class="align-right">$75.00</td>
-                        <td  class="align-right">$7,500.00</td>
+                        <td class="align-right">100</td>
+                        <td class="align-right">$75.00</td>
+                        <td class="align-right">$7,500.00</td>
                     </tr>
 
                     <tr class="item">
                         <td>Project Management</td>
-                        <td  class="align-right">12</td>
-                        <td  class="align-right">$55.30</td>
-                        <td  class="align-right">$663.60</td>
+                        <td class="align-right">12</td>
+                        <td class="align-right">$55.30</td>
+                        <td class="align-right">$663.60</td>
                     </tr>
 
                     <tr>
@@ -249,37 +250,38 @@
                         <td>&nbsp;</td>
                         <td>&nbsp;</td>
                     </tr>
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
 
         </section>
 
         <section id="totals-component-7">
             <table>
 
-                    <tr class="subtotal">
-                        <td></td>
-                        <td></td>
-                        <td class="align-right">Sub Total:</td>
-                        <td class="align-right" id="subtotal-area-8">$9163.60</td>
-                    </tr>
-                    <tr class="taxes">
-                        <td></td>
-                        <td></td>
-                        <td class="align-right">Taxes (13%):</td>
-                        <td class="align-right" id="taxes-area-9">$1,191.27</td>
-                    </tr>
-                    <tr class="total">
-                        <td></td>
-                        <td></td>
-                        <td class="align-right">Total:</td>
-                        <td class="align-right" id="total-area-10">$10,354.87</td>
-                    </tr>
-                </table>
+                <tr class="subtotal">
+                    <td></td>
+                    <td></td>
+                    <td class="align-right">Sub Total:</td>
+                    <td class="align-right" id="subtotal-area-8">$9163.60</td>
+                </tr>
+                <tr class="taxes">
+                    <td></td>
+                    <td></td>
+                    <td class="align-right">Taxes (13%):</td>
+                    <td class="align-right" id="taxes-area-9">$1,191.27</td>
+                </tr>
+                <tr class="total">
+                    <td></td>
+                    <td></td>
+                    <td class="align-right">Total:</td>
+                    <td class="align-right" id="total-area-10">$10,354.87</td>
+                </tr>
+            </table>
 
         </section>
 
     </div><!--.invoice-box-->
 
-</body>
+    </body>
+
 </html>
