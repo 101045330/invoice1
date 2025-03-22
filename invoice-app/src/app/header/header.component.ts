@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 //import '../../shared/shared-styles.service.scss';
 @Component({
   selector: 'app-header',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   //styleUrls: ['./totals.component.scss', '../../shared/shared-styles.service.scss']
 })
 export class HeaderComponent {
-
+  //receive input from parent component
+  @Input() mgInvoiceData:any; 
 }

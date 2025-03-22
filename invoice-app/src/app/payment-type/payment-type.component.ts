@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 //import '../../shared/shared-styles.service.css';
 @Component({
   selector: 'app-payment-type',
@@ -8,5 +8,7 @@ import { Component } from '@angular/core';
   //styleUrls: ['./totals.component.scss', '../../shared/shared-styles.service.scss']
 })
 export class PaymentTypeComponent {
+  @Input() mgPaymentTypes:String[] = [];
+  //electedValue: string = '';
 
 }

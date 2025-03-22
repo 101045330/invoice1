@@ -9,8 +9,12 @@
                     </td>
 
                     <td>
-                        Invoice #: 123456789 <br>
-                        Created: January 1, 2022 <br>
+                        {{mgInvoiceData.mg_invoice_number}}
+                        <!--Invoice #: 123456789 -->
+                        <br>
+                        {{mgInvoiceData.mg_invoice_date}}
+                        <!-- Created: January 1, 2022 -->
+                        <br>
                     </td>
                 </tr>
             </table>
@@ -22,11 +26,14 @@
             <table>
                 <tr>
                     <td>
-                        Emoji Web Design, Inc.
+                        {{mgInvoiceData.mg_name}}
+                        <!--Emoji Web Design, Inc.-->
                         <br>
-                        12345 Sunny Road
+                        {{mgInvoiceData.mgaddress}}
+                        <!--12345 Sunny Road-->
                         <br>
-                        Sunnyville, TX 12345
+                        {{mgInvoiceData.mg_address2}}
+                        <!--Sunnyville, TX 12345-->
 
                     </td>
 
