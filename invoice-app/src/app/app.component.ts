@@ -1,14 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-
+import { AddItemComponent } from './add-item/add-item.component';
+import { HeaderComponent } from './header/header.component';
+import { PaymentTypeComponent } from './payment-type/payment-type.component';
+import { ItemComponent } from './item/item.component';
+import { TotalsComponent } from './totals/totals.component';
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
+  imports: [RouterOutlet, AddItemComponent, HeaderComponent, PaymentTypeComponent, ItemComponent, TotalsComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'invoice-app';
+  //title = 'invoice-app';
   ////
   // Data object for invoice
   mgInvoiceData = {
