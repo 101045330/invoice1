@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   selector: 'app-add-item',
   imports: [],
   templateUrl: './add-item.component.html',
-  styleUrl: './add-item.component.scss',
+  styleUrl: './add-item.component.scss'
   //styleUrls: ['./add-item.component.scss', '../../shared/shared-styles.service.scss']
 })
 export class AddItemComponent {

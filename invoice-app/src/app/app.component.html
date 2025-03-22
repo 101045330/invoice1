@@ -1,38 +1,39 @@
-
-
 <main class="main">
 
+  <div class="container mt-5 p-4 border rounded shadow">
+
+    <section id="add-item-component-1">
       <div class="invoice-box">
-        <section id="add-item-component-1">
-          <!--component 1-->
-           <app-add-item></app-add-item>
-        </section>
-  
-          <section id="header-component-2-3">
-            <!--component 3-->
-            <app-header></app-header>
-          </section>
-  
-          <section id="payment-type-component-4-5">
-            <app-payment-type></app-payment-type>
-          </section>
-  
-          <section id="item-component-6">
-            <app-item></app-item>
-          </section>
-  
-          <section id="totals-component-7">
-            <app-totals></app-totals>
-          </section>
-  
+        <!--component 1-->
+        <app-add-item></app-add-item>
       </div><!--.invoice-box-->
+    </section>
 
+    <div class="invoice-box">
+      <section id="header-component-2-3">
+        <!--component 3-->
+        <app-header></app-header>
+      </section>
 
+      <section id="payment-type-component-4-5">
+        <!--component 3-->
+        <app-payment-type></app-payment-type>
+      </section>
+
+      <section id="item-component-6">
+        <!--component 3-->
+        <app-item></app-item>
+      </section>
+
+      <section id="totals-component-7">
+        <!--component 3-->
+        <app-totals></app-totals>
+      </section>
+
+    </div><!--.invoice-box-->
+
+  </div><!-- .container-->
 
 </main>
-
-<style type="text/css">
-
-</style>
 
 <router-outlet />
