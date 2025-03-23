@@ -15,22 +15,22 @@
         </td>
     </tr>
 </thead>
-    <tbody>
+    <tbody *ngFor="let item1 Of mgInvoiceItems">
   
-        <div *ngFor="let item1 Of mgInvoiceItems">
             <tr class="item">
                 <td>{{item1.mg_item}}</td>
                 <td class="align-right">{{item1.mg_hours}}</td>
                 <td class="align-right">$ {{item1.mg_hourly_rate}}</td>
-                <td class="align-right">$ {{ (item1.mg_hours * item1.mg_hourly_rate) }}</td>
+                <td class="align-right">$ {{ (item1.mg_hours * item1.mg_hourly_rate).toFixed(2) }}</td>
             </tr>
-        </div>
-
+      
+    </tbody>
+    <tfoot>
         <tr>
             <td>Total Hours</td>
-            <td class="align-right">132</td>
+            <td class="align-right"><b>{{this.subtotal}}</b></td>
             <td> </td>
             <td> </td>
         </tr>
-    </tbody>
+    </tfoot>
 </table>
