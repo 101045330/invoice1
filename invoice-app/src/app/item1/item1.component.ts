@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,40 +9,30 @@ import { CommonModule } from '@angular/common';
 })
 
 export class Item1Component {
+
+  //IO properties
   @Input() mgInvoiceItems: any[] = [];
+  @Output() subTotalAmount:number= 0;
 
-  subtotal: number = 0;
+  //Local properties
+  hourTotal: number = 0;
 
+  //Life cycle hook
   ngOnInit(): void {
+    this.calculateHourTotal();
     this.calculateSubtotal();
   }
 
+  //Method to calculate the total hours
+  calculateHourTotal(): void {
+    this.hourTotal = this.mgInvoiceItems.reduce((total, mgEachInvoiceItems) => (total + mgEachInvoiceItems.mg_hours) , 0);
+  }
+  
+  //Method to calculate the subtotal
   calculateSubtotal(): void {
-    this.subtotal = this.mgInvoiceItems.reduce((total, mgEachInvoiceItems) => (total + mgEachInvoiceItems.mg_hours) , 0);
+    this.mgInvoiceItems.forEach(mgEachInvoiceItems => {
+      mgEachInvoiceItems.mg_subtotal = (mgEachInvoiceItems.mg_hours * mgEachInvoiceItems.mg_rate);
+    });
   }
-
- /* subtotal: number = 0;
-
-  calculateSubtotal(input: number) {
-    this.subtotal += input;
-  }*/
-
-/*
-  subtotal: number = 0;
-
-  ngOnInit(): void {
-    this.calculateSubtotal();
-  }
-
-  calculateSubtotal(): void {
-    this.subtotal = this.mgInvoiceItems.reduce((mg_hours, img_hourly_rate) => mg_hours + img_hourly_rate, 0);
-  }
-
-  items: { name: string; price: number }[] = [
-    { name: 'Item 1', price: 10 },
-    { name: 'Item 2', price: 20 },
-    { name: 'Item 3', price: 30 }
-  ];
-  */
 
 }
