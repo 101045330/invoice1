@@ -1,20 +1,21 @@
 <table>
     <thead>
-    <tr class="heading">
-        <td>
-            Items
-        </td>
-        <td class="align-right">
-            Hours Worked
-        </td>
-        <td class="align-right">
-            Hourly Rate
-        </td>
-        <td class="align-right">
-            Total
-        </td>
-    </tr>
-</thead>
+        <tr class="heading">
+            <td>
+                Items
+            </td>
+            <td class="align-right">
+                Hours Worked
+            </td>
+            <td class="align-right">
+                Hourly Rate
+            </td>
+            <td class="align-right">
+                Total
+            </td>
+        </tr>
+    </thead>
+
     <tbody *ngFor="let item1 Of mgInvoiceItems">
   
             <tr class="item">
@@ -25,6 +26,7 @@
             </tr>
       
     </tbody>
+
     <tfoot>
         <tr>
             <td>Total Hours</td>
@@ -33,4 +35,5 @@
             <td> </td>
         </tr>
     </tfoot>
+    
 </table>
