@@ -5,7 +5,7 @@
     <section id="add-item-component-1">
       <div class="invoice-box">
         <!--component 1-->
-        <app-add-item></app-add-item>
+        <app-add-item (mgItemAdded)="mgAddItemToList($event)"></app-add-item>
       </div><!--.invoice-box-->
     </section>
 

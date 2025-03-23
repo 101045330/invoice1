@@ -1,0 +1,37 @@
+form {
+    animation: fadeIn 0.6s ease 0.4s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#itemHours,
+#itemRate {
+    width: 75px;
+}
+
+#btn_add_item {
+    height: 30px;
+    margin-left: 5px;
+    margin-top: -2px;
+    text-align: center;
+    padding: 1px 2px;
+}
+
+fieldset {
+
+    padding: 10px;
+    border-radius: 4px;
+    background: linear-gradient(to bottom, #f1efef, #f8f6f5);
+}
+
+.btn:hover {
+    background: #cda3a3;
+}

@@ -12,49 +12,36 @@ import { CommonModule } from '@angular/common';
 })
 export class AddItemComponent {
 
-  mg_invoice_item =
-    {
-      mg_item: "",
-      mg_hours: 0,
-      mg_hourly_rate: 0.00,
-      mg_payment_type_default: 'Credit Card'
-    };
+  //two way bound form fields for new item
+  mgNewItemName: string = '';
+  mgNewItemHours: number | null = null;
+  mgNewItemHourlyRate: number | null = null;
+  //mgNewItemPaymentType: string = 'Credit Card';
 
-  // handle the form submission 
-  @Output() itemAdded = new EventEmitter<{
-    mg_item: string,
-    mg_hours: number,
-    mg_hourly_rate: number,
-    mg_payment_type_default: string
+  //output event to send the new item to the parent component
+  @Output() mgItemAdded = new EventEmitter<{
+    mgName: string,
+    mgHours: number,
+    mgRate: number,
+    //mg_payment_type_default: string
   }>();
-  
-  //reset the form
-  resetForm() {
-    this.mg_invoice_item = {
-      mg_item: "",
-      mg_hours: 0,
-      mg_hourly_rate: 0.00,
-      mg_payment_type_default: 'Credit Card'
-    };
-  }
-  //submit the form
-  onSubmit() {
 
-    //validate first
-    if (this.mg_invoice_item.mg_item
-      && this.mg_invoice_item.mg_hours > 0
-      && this.mg_invoice_item.mg_hourly_rate > 0
-      && this.mg_invoice_item.mg_payment_type_default != '') {
-
-      //emitter sends the form data to te parent component
-      this.itemAdded.emit(this.mg_invoice_item);
-
-      //reset form after successful submission
-      this.resetForm();
-
-    } else {
-      alert('Please fill in all fields');
+  mgAddItem(): void {
+    //validate the form fields
+    if (this.mgNewItemName && this.mgNewItemHours !== null && this.mgNewItemHourlyRate !== null) {
+      //create new item object
+      const newItem = {
+        mgName: this.mgNewItemName,
+        mgHours: this.mgNewItemHours,
+        mgRate: this.mgNewItemHourlyRate
+      };
+      //emit the new item to the parent component
+      this.mgItemAdded.emit(newItem);
+      //reset the form fields
+      this.mgNewItemName = '';
+      this.mgNewItemHours = null;
+      this.mgNewItemHourlyRate = null;
     }
   }
-}
 
+}

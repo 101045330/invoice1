@@ -1,27 +1,28 @@
 <div class="invoice-box">
     <div class="form-container">
-        <form (ngSubmit)="onSubmit()">
+        <form (ngSubmit)="mgAddItem()" #itemForm="ngForm" class="p-3 border rounded shadow-sm bg-white">
             <fieldset>
 
-                <legend> Add work:</legend>
+                <legend> Add work: </legend>
+ 
+                <label for="itemName" class="form-label">Item:</label>
+                <input type="text" name="mgNewItemName" id="itemName" class=" item-input" title="Enter item name"
+                    placeholder="e.g. AI Marketing" [(ngModel)]="mgNewItemName" required />
 
-                <label for="item">Item:</label>
-                <input type="text" name="item" id="item" class="item-input" title="Enter item name" placeholder="Item"
-                     [(ngModel)]="mg_invoice_item.mg_item"  >
-               
-                <label for="hours">Hours:</label>
-                <input type="text" class="hours-input" name="hours" title="Enter hours worked" placeholder="Hours"
-                    [(ngModel)]="mg_invoice_item.mg_hours">
-                
-                <label for="rate">Hourly Rate:</label>
-                <input type="text" class="hourly-rate-input" name="hourly rate" title="Enter hourly rate" placeholder="Hourly Rate" 
-                    [(ngModel)]="mg_invoice_item.mg_hourly_rate">
-                
-                <button type="submit" id="btn_add_work_hours" 
-                    [disabled]="!mg_invoice_item.mg_item || !mg_invoice_item.mg_hours || !mg_invoice_item.mg_hourly_rate"
-                > Add Hours </button>
+                <label for="itemHours" class="form-label">Hours:</label>
+                <input id="itemHours" name="mgNewItemHours" type="number" class="quantity-input" placeholder=""
+                    [(ngModel)]="mgNewItemHours" required />
+
+                <label for="itemRate" class="form-label">Rate/Hr:</label>
+                <input type="number" name="mgNewItemHourlyRate" id="itemRate" class=" rate-input" placeholder=""
+                    [(ngModel)]="mgNewItemHourlyRate">
+
+
+                <button type="submit" id="btn_add_item" class="btn btn-dark"
+                    [disabled]="!mgNewItemName || !mgNewItemHours || !mgNewItemHourlyRate"> Add Item </button>
 
             </fieldset>
+
         </form>
     </div><!--.form-container-->
 
