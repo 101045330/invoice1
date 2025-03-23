@@ -57,7 +57,7 @@ export class AppComponent {
     mg_invoice_due_date: new Date().toISOString().split('T')[0],
     mg_currency_symbol: "$",
     mg_decimal_places: 2,
-    mg_payment_type: ['Credit Card', 'PayPal', 'Cheque', 'Cash', 'Bitcoin'],
+    mg_payment_type: ['InterAc Transfer','Credit Card', 'PayPal', 'Cheque'],
     mg_tax_amount: 13.00,
 
     mg_total_hours: 0,

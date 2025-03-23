@@ -5,22 +5,45 @@
         </td>
 
         <td>
-            Payment Types Accepted
+
         </td>
     </tr>
 
     <tr class="details">
 
         <td colspan="3" id="payment-component-type-5">
-            Check
+            <div *ngIf="selectedPaymentType === 'Credit Card'" class="alert alert-warning mt-2">
+                We do not accept <Strong> AMEX </Strong> cards.
+            </div>
+            <div *ngIf="selectedPaymentType === 'InterAc Transfer'" class="alert alert-warning mt-2">
+                We accept InterAc transfer within the territory of <Strong> Canada </Strong> only.
+            </div>
+            <div *ngIf="selectedPaymentType === 'Cheque'" class="alert alert-warning mt-2">
+                You may have to wait until the cheque is <Strong> Deposited </Strong> .
+            </div>
+            <div *ngIf="selectedPaymentType === 'PayPal'" class="alert alert-warning mt-2">
+                We acceept <Strong> Paypal ONLY </Strong> for payments outside of North America.
+            </div>
         </td>
 
         <td id="payment-component-type-4">
 
 
 
-            <select title="Payment Types Accepted" name="payment_mode">
-                <option value="cheque">
+            <select 
+                id="paymentSelect" 
+                title="Payment Types Accepted" name="payment_mode" 
+                class="form-select w-auto d-inline-block"
+                
+                [value]="selectedPaymentType"
+                (change)="mgOnPaymentChange($event)"                
+                >
+                <option *ngFor="let method of mgPaymentTypes" [value]="method">
+                    {{method}}
+                </option>
+            </select>
+            <!--
+             <option value="cheque">
                     Cheque
                 </option>
                 <option value="cash">
@@ -29,7 +52,7 @@
                 <option value="credit_card" selected>
                     Credit Card
                 </option>
-            </select>
+            -->
         </td>
 
     </tr>

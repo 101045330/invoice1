@@ -35,13 +35,14 @@ export class AddItemComponent {
         mgHours: this.mgNewItemHours,
         mgRate: this.mgNewItemHourlyRate
       };
+
       //emit the new item to the parent component
       this.mgItemAdded.emit(newItem);
+
       //reset the form fields
       this.mgNewItemName = '';
       this.mgNewItemHours = null;
       this.mgNewItemHourlyRate = null;
     }
   }
-
 }
