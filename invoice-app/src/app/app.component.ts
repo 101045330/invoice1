@@ -14,7 +14,8 @@ interface mgInvoiceItem {
   mgName: string;
   mgHours: number;
   mgRate: number;
-}/*
+}
+/*
 interface mgInvoiceData{
   mgName: string;
   mgAddress1: string;
@@ -44,8 +45,9 @@ interface mgInvoiceData{
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
-  //title = 'invoice-app';
+  title = 'invoice-app';
 
   // Data object for invoice
   mgInvoiceData = {
@@ -57,7 +59,7 @@ export class AppComponent {
     mg_invoice_due_date: new Date().toISOString().split('T')[0],
     mg_currency_symbol: "$",
     mg_decimal_places: 2,
-    mg_payment_type: ['InterAc Transfer','Credit Card', 'PayPal', 'Cheque'],
+    mg_payment_type: ['InterAc Transfer', 'Credit Card', 'PayPal', 'Cheque'],
     mg_tax_amount: 13.00,
 
     mg_total_hours: 0,
@@ -91,20 +93,23 @@ export class AppComponent {
   };
 
   //method to add new invoice item
-  mgAddItemToList(mg_invoice_item: mgInvoiceItem) {
-  
+  mgAddItemToList(mg_invoice_item: any) {
+
     //new item object
     const newInvoiceItem = {
       mg_id: this.mgInvoiceData.mg_invoice_items.length + 1,
       mg_item: mg_invoice_item.mgName,
       mg_hours: mg_invoice_item.mgHours,
       mg_hourly_rate: mg_invoice_item.mgRate,
-      //name change
-      mg_payment_type_selected: mg_invoice_item.mgName
+      mg_payment_type_selected: mg_invoice_item.mgPaymentType
     };
-    
+
+
     //push new item object to the invoice items array
+    console.log("Before" + this.mgInvoiceData.mg_invoice_items);
     this.mgInvoiceData.mg_invoice_items.push(newInvoiceItem);
+    console.log("After" + this.mgInvoiceData.mg_invoice_items);
+    
     //update invoice totals
     this.mgUpdateInvoiceTotals();
   }

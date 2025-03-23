@@ -19,14 +19,15 @@ export class AddItemComponent {
   //mgNewItemPaymentType: string = 'Credit Card';
 
   //output event to send the new item to the parent component
-  @Output() mgItemAdded = new EventEmitter<{
+  @Output() mgItemAdded = new EventEmitter<any>();
+ /* @Output() mgItemAdded = new EventEmitter<{
     mgName: string,
     mgHours: number,
     mgRate: number,
     //mg_payment_type_default: string
   }>();
-
-  mgAddItem(): void {
+*/
+  onSubmit() {
     //validate the form fields
     if (this.mgNewItemName && this.mgNewItemHours !== null && this.mgNewItemHourlyRate !== null) {
       //create new item object
