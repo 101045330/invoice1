@@ -4,9 +4,17 @@ import { Component, Input } from '@angular/core';
   selector: 'app-item',
   imports: [],
   templateUrl: './item.component.html',
-  styleUrl: './item.component.scss'
+  styleUrls: ['./item.component.scss']
   //styleUrls: ['./totals.component.scss', '../../shared/shared-styles.service.scss']
 })
 export class ItemComponent {
-  @Input() data:any;
+  @Input() mgInvoiceItems: any[] = [];
+
+  subtotal: number = 0;
+
+  calculateSubtotal(price: number) {
+    this.subtotal += price;
+  }
+
+
 }

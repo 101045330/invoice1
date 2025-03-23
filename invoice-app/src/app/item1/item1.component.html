@@ -1,4 +1,5 @@
 <table>
+    <thead>
     <tr class="heading">
         <td>
             Items
@@ -13,17 +14,17 @@
             Total
         </td>
     </tr>
-
+</thead>
     <tbody>
   
-        <ng-container *ngFor="let item1 of mgInvoiceItems">
+        <div *ngFor="let item1 Of mgInvoiceItems">
             <tr class="item">
                 <td>{{item1.mg_item}}</td>
                 <td class="align-right">{{item1.mg_hours}}</td>
                 <td class="align-right">$ {{item1.mg_hourly_rate}}</td>
                 <td class="align-right">$ {{ (item1.mg_hours * item1.mg_hourly_rate) }}</td>
             </tr>
-        </ng-container>
+        </div>
 
         <tr>
             <td>Total Hours</td>

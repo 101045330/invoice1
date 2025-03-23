@@ -3,14 +3,17 @@ import { RouterOutlet } from '@angular/router';
 import { AddItemComponent } from './add-item/add-item.component';
 import { HeaderComponent } from './header/header.component';
 import { PaymentTypeComponent } from './payment-type/payment-type.component';
-import { ItemComponent } from './item/item.component';
+import { Item1Component } from './item1/item1.component';
 import { TotalsComponent } from './totals/totals.component';
+
+import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, AddItemComponent, HeaderComponent, PaymentTypeComponent, ItemComponent, TotalsComponent],
+  imports: [RouterOutlet, AddItemComponent, HeaderComponent, PaymentTypeComponent, Item1Component, TotalsComponent, CommonModule],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
   //title = 'invoice-app';
