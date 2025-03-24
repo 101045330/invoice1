@@ -21,15 +21,16 @@
                 <td>{{item1.mg_item}}</td>
                 <td class="align-right">{{item1.mg_hours}}</td>
                 <td class="align-right">$ {{item1.mg_hourly_rate}}</td>
-                <td class="align-right">$ {{ (item1.mg_hours * item1.mg_hourly_rate) }}</td>
+                <td class="align-right">$ {{ (item1.mg_hours * item1.mg_hourly_rate | number: '1.2-2') }}</td>
             </tr>
         </ng-container>
 
         <tr>
             <td>Total Hours</td>
-            <td class="align-right">132</td>
+            <td class="align-right">{{totalHours}}</td>
             <td> </td>
             <td> </td>
+
         </tr>
     </tbody>
 </table>

@@ -47,7 +47,7 @@ interface mgInvoiceData{
 })
 
 export class AppComponent {
-  title = 'invoice-app';
+  title = 'MG INvoice aPP';
 
   // Data object for invoice
   mgInvoiceData = {
@@ -112,13 +112,15 @@ export class AppComponent {
     
     //update invoice totals
     this.mgUpdateInvoiceTotals();
+    console.log("Updated Invoice Data: ", this.mgInvoiceData);
+
   }
   //method to update invoice totals
   mgUpdateInvoiceTotals() {
-    this.mgInvoiceData.mg_total_hours = this.mgInvoiceData.mg_invoice_items.reduce((total, mg_invoice_item) => total + mg_invoice_item.mg_hours, 0);  // Calculate total hours
-    this.mgInvoiceData.mg_subtotal_amount = this.mgInvoiceData.mg_invoice_items.reduce((total, mg_invoice_item) => total + (mg_invoice_item.mg_hours * mg_invoice_item.mg_hourly_rate), 0);  // Calculate subtotal amount
-    this.mgInvoiceData.mg_tax_amount_total = this.mgInvoiceData.mg_subtotal_amount * (this.mgInvoiceData.mg_tax_amount / 100);  // Calculate tax amount
-    this.mgInvoiceData.mg_total_amount = this.mgInvoiceData.mg_subtotal_amount + this.mgInvoiceData.mg_tax_amount_total;  // Calculate total amount
+    this.mgInvoiceData.mg_total_hours = this.mgInvoiceData.mg_invoice_items.reduce((total, item) => total + item.mg_hours, 0);
+    this.mgInvoiceData.mg_subtotal_amount = this.mgInvoiceData.mg_invoice_items.reduce((total, item) => total + (item.mg_hours * item.mg_hourly_rate), 0);
+    this.mgInvoiceData.mg_tax_amount_total = this.mgInvoiceData.mg_subtotal_amount * (this.mgInvoiceData.mg_tax_amount / 100);
+    this.mgInvoiceData.mg_total_amount = this.mgInvoiceData.mg_subtotal_amount + this.mgInvoiceData.mg_tax_amount_total;
   }
   @Output() mgNewItemAdded = new EventEmitter<any>();
   // Perform initial calculations
