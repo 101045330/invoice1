@@ -4,18 +4,18 @@
         <td></td>
         <td></td>
         <td class="align-right">Subtotal:</td>
-        <td class="align-right" id="subtotal-area-8">{{mg_subtotal}}</td>
+        <td class="align-right" id="subtotal-area-8">{{mg_subtotal | currency  }}</td>
     </tr>
     <tr class="taxes">
         <td></td>
         <td></td>
         <td class="align-right">Taxes ({{mg_taxRate}}):</td>
-        <td class="align-right" id="taxes-area-9">{{mg_tax}}</td>
+        <td class="align-right" id="taxes-area-9">{{mg_tax | currency }}</td>
     </tr>
     <tr class="total">
         <td></td>
         <td></td>
         <td class="align-right">Total:</td>
-        <td class="align-right" id="total-area-10">{{mg_total}}</td>
+        <td class="align-right" id="total-area-10">{{mg_total | currency }}</td>
     </tr>
 </table>
